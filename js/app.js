@@ -1,5 +1,5 @@
 let app = new Vue({
-	el: '#app',
+	el: '#wapp',
 	data: {
 		weather_img: "",
 		month: "",

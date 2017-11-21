@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<title>Cat Weather :)</title>
@@ -27,101 +27,100 @@
 </head>
 <!-- START APP -->
 <body id="wapp">
-	<img :src="weather_img" class="bg">
-	<div class="content-container">
-		<div class="row">
-			<div class="weather-widget">
-				<div class="col-sm-12 pad-0">
-					<div class="panel panel-default">
-						<div class="panel-body lighter-grey bg-dark-grey">
-							<!-- SEARCH -->
-							<div id="search-wrap">
-								<div class="input-group col-xs-12 col-xs-offset-0 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
-									<a class="input-group-addon back-btn" href="javascript:;"><i class="zmdi zmdi-arrow-left"></i></a>
-									<input class="form-control" v-on:keyup.enter="setLocation" id="location" type="text" placeholder="Type and press enter/return">
-								</div>
+<img :src="weather_img" class="bg">
+<div class="content-container">
+	<div class="row">
+		<div class="weather-widget">
+			<div class="col-sm-12 pad-0">
+				<div class="panel panel-default">
+					<div class="panel-body lighter-grey bg-dark-grey">
+						<!-- SEARCH -->
+						<div id="search-wrap">
+							<div class="input-group col-xs-12 col-xs-offset-0 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
+								<a class="input-group-addon back-btn" href="javascript:;"><i class="zmdi zmdi-arrow-left"></i></a>
+								<input class="form-control" v-on:keyup.enter="setLocation" id="location" type="text" placeholder="Type and press enter/return">
 							</div>
-							<!-- CITY AND TEMPERATURES -->
-							<div class="row">
-								<div class="col-xs-12 text-center pad-top-25 pad-bottom-15">
-									<p class="font-bold font-15 pad-top-5 uppercase">today</p>
-									<p class="font-light">in <span class="place">{{ city }}</span>, <span class="font-bold">{{ country }}</span></p>
-								</div>
-								<div class="col-xs-3 col-sm-3 col-md-2 text-center font-light font-2">
-									<span class="font-bold light-blue">{{temp_min}}</span>&deg;<span class="hidden-xs">{{ temp_unit }}</span>
-								</div>
-								<div class="col-xs-6 col-sm-6 col-md-8 multicolor text-center">
-								</div>
-								<div class="col-xs-3 col-sm-3 col-md-2 text-center font-light font-2">
-									<span class="font-bold light-violet">{{temp_max}}</span>&deg;<span class="hidden-xs">{{ temp_unit }}</span>
-								</div>
+						</div>
+						<!-- CITY AND TEMPERATURES -->
+						<div class="row">
+							<div class="col-xs-12 text-center pad-top-25 pad-bottom-15">
+								<p class="font-bold font-15 pad-top-5 uppercase">today</p>
+								<p class="font-light">in <span class="place">{{ city }}</span>, <span class="font-bold">{{ country }}</span></p>
 							</div>
-							<div class="row">
-								<div class="col-xs-3 col-sm-3 col-md-2 text-center font-light font-075" style="padding-left: 8px;">
-									LOW
-								</div>
-								<div class="col-xs-6 col-sm-6 col-md-8">
-								</div>
-								<div class="col-xs-3 col-sm-3 col-md-2 text-center font-light font-075" style="padding-left: 8px;">
-									HIGH
-								</div>
+							<div class="col-xs-3 col-sm-3 col-md-2 text-center font-light font-2">
+								<span class="font-bold light-blue">{{temp_min}}</span>&deg;<span class="hidden-xs">{{ temp_unit }}</span>
 							</div>
-							<!-- WEATHER -->
-							<div class="row">
-								<div class="col-xs-10 col-xs-offset-1 text-center main-icon">
-									<i :class="main_icon"></i>
-									<span class="font-bold">{{ weather_descrip }}</span>
-								</div>
+							<div class="col-xs-6 col-sm-6 col-md-8 multicolor text-center">
 							</div>
-							<div class="row">
-								<div class="col-xs-10 col-xs-offset-1 text-center">
-									{{ app }}
-									<div class="col-xs-7 pad-0 font-temperature font-thin text-right">
-										{{temp}}
+							<div class="col-xs-3 col-sm-3 col-md-2 text-center font-light font-2">
+								<span class="font-bold light-violet">{{temp_max}}</span>&deg;<span class="hidden-xs">{{ temp_unit }}</span>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-3 col-sm-3 col-md-2 text-center font-light font-075" style="padding-left: 8px;">
+								LOW
+							</div>
+							<div class="col-xs-6 col-sm-6 col-md-8">
+							</div>
+							<div class="col-xs-3 col-sm-3 col-md-2 text-center font-light font-075" style="padding-left: 8px;">
+								HIGH
+							</div>
+						</div>
+						<!-- WEATHER -->
+						<div class="row">
+							<div class="col-xs-10 col-xs-offset-1 text-center main-icon">
+								<i :class="main_icon"></i>
+								<span class="font-bold">{{ weather_descrip }}</span>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-10 col-xs-offset-1 text-center">
+								{{ app }}
+								<div class="col-xs-7 pad-0 font-temperature font-thin text-right">
+									{{temp}}
+								</div>
+								<div class="col-xs-5 pad-0 text-left">
+									<div class="col-xs-12 font-5 font-light pad-0 pad-top-25">
+										&deg;
 									</div>
-									<div class="col-xs-5 pad-0 text-left">
-										<div class="col-xs-12 font-5 font-light pad-0 pad-top-25">
-											&deg;
-										</div>
-										<div class="col-xs-12 font-6 pad-0 font-ligh pad-top-5">
-											{{ temp_unit }}
-										</div>
+									<div class="col-xs-12 font-6 pad-0 font-ligh pad-top-5">
+										{{ temp_unit }}
 									</div>
 								</div>
 							</div>
-							<!-- DATE & MONTHLY QUOTE -->
-							<div class="row text-center">
-								<p class="font-thin font-3">{{day}}<sup class="font-light font-05">{{day_sup}}</sup><span class="font-05 font-light"> </span><span class="font-075"> {{ month }}</span></p>
-								<p class="font-light font-15">{{month_quote}}</p>
-							</div>
-							<!-- ACTIONS -->
-							<div class="row pad-top-10 pad-bottom-5">
-								<div class="col-xs-12">
-									<div class="col-xs-12 col-sm-5 col-md-4 col-lg-3 actions">
-										<div class="col-xs-4 text-center">
-											<a title="Set location" class="btn" id="locationsearch" href="javascript:;"><i class="zmdi zmdi-pin"></i></a>
-										</div>
-										<div class="col-xs-4 text-center">
-											<a title="Change unit" v-on:click="toggleUnit" class="btn" href="javascript:;"><i class="zmdi zmdi-swap"></i></a>
-										</div>
-										<div class="col-xs-4 text-center">
-											<a title="Refresh" v-on:click="getWeatherData" class="btn" href="javascript:;"><i class="zmdi zmdi-refresh zmdi-hc-spin"></i></a>
-										</div>
+						</div>
+						<!-- DATE & MONTHLY QUOTE -->
+						<div class="row text-center">
+							<p class="font-thin font-3">{{day}}<sup class="font-light font-05">{{day_sup}}</sup><span class="font-05 font-light"> </span><span class="font-075"> {{ month }}</span></p>
+							<p class="font-light font-15">{{month_quote}}</p>
+						</div>
+						<!-- ACTIONS -->
+						<div class="row pad-top-10 pad-bottom-5">
+							<div class="col-xs-12">
+								<div class="col-xs-12 col-sm-5 col-md-4 col-lg-3 actions">
+									<div class="col-xs-4 text-center">
+										<a title="Set location" class="btn" id="locationsearch" href="javascript:;"><i class="zmdi zmdi-pin"></i></a>
 									</div>
-									<div class="col-xs-12 col-sm-5 col-md-4 col-md-offset-4 col-sm-offset-2 col-lg-3 col-lg-offset-6 cool-wi">
-										<!-- MORE INFO -->
-										<div title="Wind speed" class="col-xs-4 text-center">
-											<i class="wi wi-windy multi2"></i>
-											<div>{{ wind_speed }}{{ speed_unit }}</div>
-										</div>
-										<div title="Humidity" class="col-xs-4 text-center">
-											<i class="wi wi-humidity multi1"></i>
-											<div>{{ humidity }}%</div>
-										</div>
-										<div title="Clouds" class="col-xs-4 text-center">
-											<i class="wi wi-cloud multi2"></i>
-											<div>{{ clouds }}%</div>
-										</div>
+									<div class="col-xs-4 text-center">
+										<a title="Change unit" v-on:click="toggleUnit" class="btn" href="javascript:;"><i class="zmdi zmdi-swap"></i></a>
+									</div>
+									<div class="col-xs-4 text-center">
+										<a title="Refresh" v-on:click="getWeatherData" class="btn" href="javascript:;"><i class="zmdi zmdi-refresh zmdi-hc-spin"></i></a>
+									</div>
+								</div>
+								<div class="col-xs-12 col-sm-5 col-md-4 col-md-offset-4 col-sm-offset-2 col-lg-3 col-lg-offset-6 cool-wi">
+									<!-- MORE INFO -->
+									<div title="Wind speed" class="col-xs-4 text-center">
+										<i class="wi wi-windy multi2"></i>
+										<div>{{ wind_speed }}{{ speed_unit }}</div>
+									</div>
+									<div title="Humidity" class="col-xs-4 text-center">
+										<i class="wi wi-humidity multi1"></i>
+										<div>{{ humidity }}%</div>
+									</div>
+									<div title="Clouds" class="col-xs-4 text-center">
+										<i class="wi wi-cloud multi2"></i>
+										<div>{{ clouds }}%</div>
 									</div>
 								</div>
 							</div>
@@ -131,11 +130,13 @@
 			</div>
 		</div>
 	</div>
+</div>
 <!-- SCRIPTS -->
 <script src="https://unpkg.com/jquery@3.2.1/dist/jquery.js"></script>
 <script>window.jQuery || document.write('<script src=https://unpkg.com/jquery@3.2.1/dist/jquery.js"><\/script>')</script>
 <script type="text/javascript" src="https://unpkg.com/vue@1.0.28/dist/vue.js"></script>
-<script type="text/javascript" src="https://unpkg.com/vue-resource@0.9.3/dist/vue-resource.js"></script>
+<!-- <script type="text/javascript" src="https://unpkg.com/vue-resource@0.9.3/dist/vue-resource.js"></script> -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue-resource@1.3.4"></script>
 <script type="text/javascript" src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
 <script src="js/icons.json"></script>
 <!-- CUSTOM SCRIPT -->
